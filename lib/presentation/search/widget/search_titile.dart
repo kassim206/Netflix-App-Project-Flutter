@@ -5,7 +5,8 @@ class SearchTitile extends StatelessWidget {
 final String titile;
   @override
   Widget build(BuildContext context) {
-    return  Text("Top Searches",style: TextStyle(
+    return  Text(titile,
+      style: const TextStyle(
       fontSize: 22,
       fontWeight: FontWeight.bold,
     ),);

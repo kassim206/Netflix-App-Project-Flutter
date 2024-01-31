@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix_app/presentation/search/widget/search_idle.dart';
+import 'package:netflix_app/presentation/search/widget/search_result.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
@@ -19,7 +20,8 @@ class SearchPage extends StatelessWidget {
               style: const TextStyle(color: Colors.white),
               suffixIcon: const Icon(CupertinoIcons.xmark_circle_fill,color: Colors.grey,),
             ),
-            Expanded(child: const SearchIdleWidget()),
+            // Expanded(child: const SearchIdleWidget()),
+            Expanded(child: const SearchResult()),
           ],
         ),
       ),

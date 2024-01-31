@@ -15,7 +15,7 @@ class SearchIdleWidget extends StatelessWidget {
         SizedBox(height: deviceHeight*0.01,),
         Expanded(
           child: ListView.separated(
-            shrinkWrap: true,
+              shrinkWrap: true,
               itemBuilder: (context,index)=>TopSearchItems(),
               separatorBuilder: (context,index)=>SizedBox(height: deviceHeight*0.03,),
               itemCount: 10),
