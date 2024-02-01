@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:netflix_app/presentation/new_and_hot/widget/titileshow.dart';
 
 import '../../core/globel_variable.dart';
 import '../appbarWidget/widget/appbar_screen.dart';
@@ -10,11 +11,13 @@ class NewAndHot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: PreferredSize(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(deviceHeight * 0.1),
-    child: AppBarWidget(title: "New And Hot"),
-        ),
-      body:  Text('New And Hot'),
+        child: const AppBarWidget(title: "New & Hot"),
+      ),
+      body: ListView(
+        children: [   TitleShow()],
+      )
     );
   }
 }
