@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_app/presentation/new_and_hot/widget/video_widget.dart';
 
 import '../../../core/globel_variable.dart';
 import '../../../widgets/custom_buttom.dart';
 import 'comming_soon.dart';
+import 'everyone_watch.dart';
 
 class TitleShow extends StatelessWidget {
   const TitleShow({super.key});
@@ -20,8 +22,10 @@ class TitleShow extends StatelessWidget {
             child: TabBar(
               indicator: BoxDecoration(), // Set indicator to null
               tabs: [
-                _buildTabContent(Colors.black, Colors.white, "assets/img/cup-popcorn.png", "Coming Soon"),
-                _buildTabContent(Colors.black, Colors.white, "assets/img/eyelogo.png", "Everyone's Watching"),
+                _buildTabContent(Colors.black, Colors.white,
+                    "assets/img/cup-popcorn.png", "Coming Soon"),
+                _buildTabContent(Colors.black, Colors.white,
+                    "assets/img/eyelogo.png", "Everyone's Watching"),
               ],
             ),
           ),
@@ -50,7 +54,8 @@ class TitleShow extends StatelessWidget {
     );
   }
 
-  Widget _buildTabContent(Color bgColor, Color textColor, String iconPath, String labelText) {
+  Widget _buildTabContent(
+      Color bgColor, Color textColor, String iconPath, String labelText) {
     return Container(
       width: deviceWidth,
       color: bgColor,
@@ -73,27 +78,19 @@ class TitleShow extends StatelessWidget {
     );
   }
 }
+
 Widget _buildTabCommingSoon() {
   return ListView.builder(
-    itemCount: 10,
-      itemBuilder: (BuildContext context ,index){
-    return CommingSoon();
-  });
+      itemCount: 10,
+      itemBuilder: (BuildContext context, index) {
+        return const CommingSoon();
+      });
 }
+
 Widget _buildTabEveryOneWatching() {
-  return Container(
-    color: Colors.red,
-    child: Row(
-      children: [
-        Align(
-          alignment: Alignment.topLeft,
-          child: Container(
-            width: deviceWidth*0.2,
-            height: deviceHeight,
-            color: Colors.black,
-          ),
-        )
-      ],
-    ),
-  );
+  return ListView.builder(
+      itemCount: 10,
+      itemBuilder: (BuildContext context, index) {
+        return const EveryOneWatch();
+      });
 }
